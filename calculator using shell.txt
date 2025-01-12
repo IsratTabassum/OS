@@ -1,0 +1,30 @@
+# !/bin/bash 
+while true; do 
+echo "Select an operation:" 
+echo "1. Addition (+)" 
+echo "2. Subtraction (-)" 
+echo "3. Multiplication (*)" 
+echo "4. Division (/)" 
+echo "5. Exit" 
+read -p "Enter Operator (1-5): " operators 
+if [ "$operators" -eq 5 ]; 
+then  
+break 
+fi 
+read -p "Enter the first number: " x; 
+read -p "Enter the second number: " y; 
+case $operators in 
+1)echo "Result: $x + $y = $(($x+$y))";; 
+2)echo "Result: $x - $y = $(($x-$y))";; 
+3)echo "Result: $x * $y = $(($x*$y))";; 
+4) if [ "$y" -eq 0 ] 
+then 
+echo "Division Not Possible" 
+
+else 
+echo "Result: $x / $y = $(($x/$y))" 
+fi;; 
+*) echo "Invalid option. Please select a valid operator (1-5) ";; 
+esac 
+echo 
+done 
